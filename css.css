@@ -1,0 +1,12 @@
+h1{color : blue;
+text-align: center;}
+p{color:darkgrey;
+    margin: 15px;
+}
+ul{border-style: dotted;}
+#destacado{
+    background-color: yellow;
+}
+.importante{
+    font-weight: bold;
+}
