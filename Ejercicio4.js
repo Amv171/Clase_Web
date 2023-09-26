@@ -14,3 +14,5 @@ const next = () => {
   }
   document.getElementById("image").src = fotos[cont];
 };
+document.getElementById("prevButton").onclick = prev;
+document.getElementById("nextButton").onclick = next;
