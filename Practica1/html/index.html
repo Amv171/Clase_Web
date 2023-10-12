@@ -14,8 +14,8 @@
     <!---------------------------------------------------------------------Nav Bar----------------------------------------------------------------------------------------------->
     <nav class="navbar bg-body-tertiary">
         <div class="container">
-            <div class="dropdown">                
-              <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <div id = "numero-jugadores"class="dropdown">                
+              <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"  aria-expanded="false">
                     Numero de jugadores
                 </button>
                 <ul class="dropdown-menu">
@@ -35,13 +35,13 @@
                 <div class="card-body">
                   
                   <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <button class="invisible" type="button" id ="J1"  data-bs-toggle="dropdown" aria-expanded="false">
                         Elije la seleccion
                     </button>
                     <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#">Piedra</a></li>
-                      <li><a class="dropdown-item" href="#">Papel</a></li>
-                      <li><a class="dropdown-item" href="#">Tijeras</a></li>
+                      <li><a class="dropdown-item" id="J1-piedra" href="#">Piedra</a></li>
+                      <li><a class="dropdown-item" id="J1-papel"href="#">Papel</a></li>
+                      <li><a class="dropdown-item" id="J1-tijeras"href="#">Tijeras</a></li>
                     </ul>
                   </div>
                 </div>
@@ -52,17 +52,22 @@
                 <div class="card-body">
                   
                   <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <button class="invisible" type="button" id ="J2"data-bs-toggle="dropdown" aria-expanded="false">
                         Elije la seleccion
                     </button>
                     <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#">Piedra</a></li>
-                      <li><a class="dropdown-item" href="#">Papel</a></li>
-                      <li><a class="dropdown-item" href="#">Tijeras</a></li>
+                      <li><a class="dropdown-item" id="J2-piedra"href="#">Piedra</a></li>
+                      <li><a class="dropdown-item" id="J2-papel"href="#">Papel</a></li>
+                      <li><a class="dropdown-item" id="J2-tijeras"href="#">Tijeras</a></li>
                     </ul>
-                  </div>                </div>
+                  </div>                
+                </div>
               </div>
         </div>
       </main>
+      <!---------------------------------------Footer------------------------------------------------------------------------------->
+      <footer>
+        <button class = "btn bg-danger m-5" id="btn-finalizar">Finalizar</button>
+      </footer>
 </body>
 </html>
