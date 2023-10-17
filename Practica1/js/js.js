@@ -2,6 +2,8 @@
 let finalizarJuego = true;
 let jugador1 = -1;
 let jugador2 = -1;
+let jugador1_score = 0;
+let jugador2_score = 0;
 let default_cont = 3;
 //--------------------------------------------------------------Funciones de juego-----------------------------------------------
 //En el juago de piedra, papel o tijeras el papel sera el numero 0, la piedra el 1 y la tijera el 2
@@ -34,26 +36,32 @@ document.getElementById("2jugador").onclick = ()=>play(2);
 const ganador = (jugador1, jugador2)=>{
     if(jugador1 == 0 && jugador2 == 1){ //Jugador 1: piedra, Jugador 2: papel
         alert("Gana el jugador 2");
+        jugador1_score++;
         return 2;
     }
     else if(jugador1 == 0 && jugador2 == 2){ //Jugador1: piedra, Jugador 2: tijera
         alert("Gana el jugador 1");
+        jugador1_score++;
         return 1;
     }
     else if(jugador1 == 1 && jugador2 == 0){ //Jugador 1: papel, Jugador 2: piedra
         alert("Gana el jugador 1");
+        jugador1_score++;
         return 1;
     }
     else if(jugador1 == 1 && jugador2 == 2){//Jugador 1: papel, Jugador 2: tijera
         alert("Gana el jugador 2");
+        jugador2_score++;
         return 2;
     }
     else if(jugador1 == 2 && jugador2 == 0){//Jugador 1: tijera, Jugador 2: piedra
         alert("Gana el jugador 2");
+        jugador2_score++;
         return 2;
     }
     else if(jugador1 == 2 && jugador2 == 1){//jugador 1: tijera, Jugador 2: papel
         alert("Gana el jugador 1");
+        jugador1_score++;
         return 1;
     }
     else{
@@ -85,6 +93,8 @@ const finalizar = ()=>{
     document.getElementById("numero-jugadores").className = "dropdown";
     document.getElementById("J1").className = "invisible";
     document.getElementById("J2").className = "invisible";
+    document.getElementById("J1-score").innerHTML = "Score = "+0;
+    document.getElementById("J2-score").innerHTML = "Score = "+0;
     jugador1 = -1;
     jugador2 = -1;
     default_cont = 10;
@@ -97,6 +107,8 @@ document.getElementById("btn-juego").onclick = ()=>{if(jugador1 !=-1 && jugador2
     jugador2 = -1;
     document.getElementById("J1-img").src="../img/default.webp"
     document.getElementById("J2-img").src="../img/default.webp"
+    document.getElementById("J1-score").innerHTML = "Score = "+jugador1_score;
+    document.getElementById("J2-score").innerHTML = "Score = "+jugador2_score;
 }
     else{
         alert("Seleccione para ambos jugadores");
