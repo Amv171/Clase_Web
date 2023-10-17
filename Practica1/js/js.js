@@ -2,6 +2,7 @@
 let finalizarJuego = true;
 let jugador1 = -1;
 let jugador2 = -1;
+let default_cont = 3;
 //--------------------------------------------------------------Funciones de juego-----------------------------------------------
 //En el juago de piedra, papel o tijeras el papel sera el numero 0, la piedra el 1 y la tijera el 2
 //0 gana al 1, 1 gana al 2 y 2 gana al 0
@@ -69,13 +70,13 @@ document.getElementById("J1-papel").onclick =()=> {if(jugador1 === -1)
 document.getElementById("J1-tijeras").onclick = ()=>{if(jugador1 === -1)
     {alert("Jugador 1: Tijera"); jugador1 = 2;document.getElementById("J1-img").src="../img/tijeras.jpg"}
 }
-document.getElementById("J2-piedra").onclick =()=> {if(jugador2 === -1)
+document.getElementById("J2-piedra").onclick =()=> {if(jugador2 === -1 && jugador1 != -1)
     {alert("Jugador 2: Piedra"); jugador2 = 0;document.getElementById("J2-img").src="../img/piedra.png"}
 }
-document.getElementById("J2-papel").onclick =()=> {if(jugador2 === -1)
+document.getElementById("J2-papel").onclick =()=> {if(jugador2 === -1&& jugador1 != -1)
     {alert("Jugador 2: Papel"); jugador2 = 1;document.getElementById("J2-img").src="../img/papel.jpg"}
 }
-document.getElementById("J2-tijeras").onclick = ()=>{if(jugador2 === -1)
+document.getElementById("J2-tijeras").onclick = ()=>{if(jugador2 === -1&& jugador1 != -1)
     {alert("Jugador 2: Tijera"); jugador2 = 2;document.getElementById("J2-img").src="../img/tijeras.jpg"}
 }
 //-----------------------------------------------Finalizar juego-----------------------------------------------
@@ -84,6 +85,9 @@ const finalizar = ()=>{
     document.getElementById("numero-jugadores").className = "dropdown";
     document.getElementById("J1").className = "invisible";
     document.getElementById("J2").className = "invisible";
+    jugador1 = -1;
+    jugador2 = -1;
+    default_cont = 10;
     finalizarJuego = true;
 }
 document.getElementById("btn-finalizar").onclick = finalizar;
