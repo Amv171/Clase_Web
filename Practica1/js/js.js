@@ -24,7 +24,8 @@ switch (jugadores){
     document.getElementById("J2").className = "invisible";
     document.getElementById("numero-jugadores").className = "invisible";
    document.getElementById("btn-juego").onclick = ()=>{
-    seleccion_aleatoria(1);seleccion_aleatoria(2);
+    seleccion_aleatoria(1);
+    seleccion_aleatoria(2);
     setTimeout(() => {
         if(jugador1 !=-1 && jugador2 != -1){
             ganador(jugador1,jugador2);
@@ -39,8 +40,8 @@ switch (jugadores){
                 alert("Seleccione para ambos jugadores");
             }
     }, 1000);
-   
 }
+
     break;
     case 1: alert("Jugador 1");
     finalizarJuego = false;
@@ -50,19 +51,23 @@ switch (jugadores){
     document.getElementById("J2").className = "invisible";
     document.getElementById("numero-jugadores").className = "invisible";
     document.getElementById("btn-juego").onclick = ()=>{if(jugador1 !=-1 ){
-        setTimeout(()=>{seleccion_aleatoria(2);},1000); 
-        ganador(jugador1,jugador2);
-        jugador1 = -1;
-        jugador2 = -1;
-        document.getElementById("J1-img").src="../img/default.jpg"
-        document.getElementById("J2-img").src="../img/default.jpg"
-        document.getElementById("J1-score").innerHTML = "Score = "+jugador1_score;
-        document.getElementById("J2-score").innerHTML = "Score = "+jugador2_score;
+        seleccion_aleatoria(2); 
+        setTimeout(() => {
+            ganador(jugador1,jugador2);
+            jugador1 = -1;
+            jugador2 = -1;
+            document.getElementById("J1-img").src="../img/default.jpg"
+            document.getElementById("J2-img").src="../img/default.jpg"
+            document.getElementById("J1-score").innerHTML = "Score = "+jugador1_score;
+            document.getElementById("J2-score").innerHTML = "Score = "+jugador2_score;
+        }, 1000);
+       
     }
         else{
             alert("Seleccione para ambos jugadores");
         }
     }
+    
     break;
     case 2: alert("Jugador 2");
     finalizarJuego = false;
@@ -84,7 +89,7 @@ switch (jugadores){
             alert("Seleccione para ambos jugadores");
         }
     }
-
+    
     break;
 }
 }
@@ -114,55 +119,76 @@ const ganador = (jugador1, jugador2)=>{
     if(jugador1 == 0 && jugador2 == 1){ //Jugador 1: piedra, Jugador 2: papel
         alert("Gana el jugador 2");
         jugador2_score++;
-        return 2;
+        setTimeout(() => {if(parseInt((default_cont/2))+1===jugador1_score || parseInt((default_cont/2))+1===jugador2_score){
+            alert("Fin del juego");
+            finalizar();
+        }}, 1000);
     }
     else if(jugador1 == 0 && jugador2 == 2){ //Jugador1: piedra, Jugador 2: tijera
         alert("Gana el jugador 1");
         jugador1_score++;
-        return 1;
+        setTimeout(() => {if(parseInt((default_cont/2))+1===jugador1_score || parseInt((default_cont/2))+1===jugador2_score){
+            alert("Fin del juego");
+            finalizar();
+        }}, 1000);
     }
     else if(jugador1 == 1 && jugador2 == 0){ //Jugador 1: papel, Jugador 2: piedra
         alert("Gana el jugador 1");
         jugador1_score++;
-        return 1;
+        setTimeout(() => {if(parseInt((default_cont/2))+1===jugador1_score || parseInt((default_cont/2))+1===jugador2_score){
+            alert("Fin del juego");
+            finalizar();
+        }}, 1000);
     }
     else if(jugador1 == 1 && jugador2 == 2){//Jugador 1: papel, Jugador 2: tijera
         alert("Gana el jugador 2");
         jugador2_score++;
-        return 2;
+        setTimeout(() => {if(parseInt((default_cont/2))+1===jugador1_score || parseInt((default_cont/2))+1===jugador2_score){
+            alert("Fin del juego");
+            finalizar();
+        }}, 1000);
     }
     else if(jugador1 == 2 && jugador2 == 0){//Jugador 1: tijera, Jugador 2: piedra
         alert("Gana el jugador 2");
         jugador2_score++;
-        return 2;
+        setTimeout(() => {if(parseInt((default_cont/2))+1===jugador1_score || parseInt((default_cont/2))+1===jugador2_score){
+            alert("Fin del juego");
+            finalizar();
+        }}, 1000);
     }
     else if(jugador1 == 2 && jugador2 == 1){//jugador 1: tijera, Jugador 2: papel
         alert("Gana el jugador 1");
         jugador1_score++;
-        return 1;
+        setTimeout(() => {if(parseInt((default_cont/2))+1===jugador1_score || parseInt((default_cont/2))+1===jugador2_score){
+            alert("Fin del juego");
+            finalizar();
+        }}, 1000);
     }
     else{
         alert("Empate");
-        return 0;
+        setTimeout(() => {if(parseInt((default_cont/2))+1===jugador1_score || parseInt((default_cont/2))+1===jugador2_score){
+            alert("Fin del juego");
+            finalizar();
+        }}, 1000);
     }
 }
 document.getElementById("J1-piedra").onclick =()=> {if(jugador1 === -1)
-    {alert("Jugador 1: Piedra"); jugador1 = 0;document.getElementById("J1-img").src="../img/piedra.png"}
+    { jugador1 = 0;document.getElementById("J1-img").src="../img/piedra.png"}
 }
 document.getElementById("J1-papel").onclick =()=> {if(jugador1 === -1)
-    {alert("Jugador 1: Papel"); jugador1 = 1;document.getElementById("J1-img").src="../img/papel.jpg"}
+    { jugador1 = 1;document.getElementById("J1-img").src="../img/papel.jpg"}
 }
 document.getElementById("J1-tijeras").onclick = ()=>{if(jugador1 === -1)
-    {alert("Jugador 1: Tijera"); jugador1 = 2;document.getElementById("J1-img").src="../img/tijeras.jpg"}
+    { jugador1 = 2;document.getElementById("J1-img").src="../img/tijeras.jpg"}
 }
 document.getElementById("J2-piedra").onclick =()=> {if(jugador2 === -1 && jugador1 != -1)
-    {alert("Jugador 2: Piedra"); jugador2 = 0;document.getElementById("J2-img").src="../img/piedra.png"}
+    { jugador2 = 0;document.getElementById("J2-img").src="../img/piedra.png"}
 }
 document.getElementById("J2-papel").onclick =()=> {if(jugador2 === -1&& jugador1 != -1)
-    {alert("Jugador 2: Papel"); jugador2 = 1;document.getElementById("J2-img").src="../img/papel.jpg"}
+    { jugador2 = 1;document.getElementById("J2-img").src="../img/papel.jpg"}
 }
 document.getElementById("J2-tijeras").onclick = ()=>{if(jugador2 === -1&& jugador1 != -1)
-    {alert("Jugador 2: Tijera"); jugador2 = 2;document.getElementById("J2-img").src="../img/tijeras.jpg"}
+    { jugador2 = 2;document.getElementById("J2-img").src="../img/tijeras.jpg"}
 }
 //-----------------------------------------------Finalizar juego-----------------------------------------------
 const finalizar = ()=>{
@@ -176,7 +202,7 @@ const finalizar = ()=>{
     document.getElementById("J2-img").src="../img/default.jpg"
     jugador1 = -1;
     jugador2 = -1;
-    default_cont = 10;
+    default_cont = 3;
     finalizarJuego = true;
 }
 document.getElementById("btn-finalizar").onclick = finalizar;
