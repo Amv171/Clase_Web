@@ -12,7 +12,7 @@
 </head>
 <body>
     <!---------------------------------------------------------------------Nav Bar----------------------------------------------------------------------------------------------->
-    <nav class="navbar bg-body-tertiary">
+    <nav class="navbar bg-success-subtle">
         <div class="container">
             <div id = "numero-jugadores"class="dropdown">                
               <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"  aria-expanded="false">
@@ -29,17 +29,17 @@
                       Numero de jugadas (Default 3)
                   </button>
                   <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" id = "1jugador"href="#">5</a></li>
-                    <li><a class="dropdown-item" id= "2jugador"href="#">7</a></li>
-                    <li><a class="dropdown-item" id= "2jugador"href="#">Indefinido</a></li>
+                    <li><a class="dropdown-item" id = "mejor-5"href="#">5</a></li>
+                    <li><a class="dropdown-item" id= "mejor-7"href="#">7</a></li>
+                    <li><a class="dropdown-item" id= "mejor-9"href="#">9</a></li>
                   </ul>
                 </div>
         </div>
       </nav>
       <!--------------------------------------------------Container de juego------------------------------------------------------------------------------------------------------->
-      <main class="container">
+      <main class="container mb-5  ">
         <div class="row">
-            <div class="card col-12 col-md-6 mt-5 p-2">
+            <div class="card col-12 col-md-6 mt-5 p-2 bg-primary-subtle">
                 <h5 class="card-title">Jugador 1</h5>
                 <img src="../img/default.jpg" id="J1-img"class="card-img-top" alt="...">
                 <div class="card-body">
@@ -57,7 +57,7 @@
                   <h2 class="card-text" id="J1-score">Score = 0</h2>
                 </div>
               </div>
-              <div class="card col-12 col-md-6 mt-5 p-2" >
+              <div class="card col-12 col-md-6 mt-5 p-2 bg-danger-subtle" >
                 <h5 class="card-title">Jugador 2</h5>
                 <img src="../img/default.jpg" id = "J2-img" class="card-img-top" alt="...">
                 <div class="card-body">
@@ -78,9 +78,12 @@
         </div>
       </main>
       <!---------------------------------------Footer------------------------------------------------------------------------------->
-      <footer>
-        <button class = "btn bg-success m-5" id="btn-juego">Jugar</button>
-        <button class = "btn bg-danger m-5" id="btn-finalizar">Finalizar</button>
+      <footer class="container-fluid">
+        <div class="row">
+        <button class = "btn btn-secondary bg-success mt-4 mb-5 me-auto col-5  p-2 " id="btn-juego">Jugar</button>
+        <button class = "btn btn-secondary bg-danger mt-4  mb-5 ms-auto  col-5 p-2 " id="btn-finalizar">Finalizar</button>
+        </div>
+
       </footer>
 </body>
 </html>

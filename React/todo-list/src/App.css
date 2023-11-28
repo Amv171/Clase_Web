@@ -36,3 +36,13 @@
     transform: rotate(360deg);
   }
 }
+.List-to-do{
+  border-radius: 20px;
+  border-color: #282c34;
+  background-color: #61dafb;
+  padding-bottom: 25%;
+  padding-top: 5%;
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-bottom: 5%;
+}

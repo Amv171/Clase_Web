@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--Links CSS and JS-->
+    <link rel="stylesheet" type="text/css" href="../css/cs.css">
+    <script src="../js/js.js"  defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dos o uno</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"defer></script>
+</head>
+<body class = "bg-info-subtle">  
+    <nav class="navbar bg-success-subtle">
+        <div class="container">
+            <div id = "numero-humanos"class="dropdown">                
+              <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"  aria-expanded="false">
+                    Numero de humanos
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" id ="0Humano"href="#">0</a></li>
+                  <li><a class="dropdown-item" id = "1Humano"href="#">1</a></li>
+                  <li><a class="dropdown-item" id= "2Humano"href="#">2</a></li>
+                  <li><a class="dropdown-item" id= "3Humano"href="#">3</a></li>
+                </ul>
+              </div>
+              <div id = "numero-partidas"class="dropdown">                
+                <button  id = "partidas-text"class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"  aria-expanded="false">
+                      Numero de partidas default(1)
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" id= "2partidas"href="#">2</a></li>
+                    <li><a class="dropdown-item" id= "3partidas"href="#">3</a></li>
+                    <li><a class="dropdown-item" id= "4partidas"href="#">4</a></li>
+                    <li><a class="dropdown-item" id= "5partidas"href="#">5</a></li>
+                  </ul>
+                </div>
+        </div>
+      </nav>
+      <main class="container-fluid mb-5  bg-info-subtle">
+        <div class="row bg-info-subtle">
+            <!--                                    Jugador 1                                                   -->
+
+
+
+            <div class="card col-12 col-md-4 mt-5 p-2 bg-primary-subtle">
+                <h5 class="card-title">Jugador 1</h5>
+                <img src="../img/cero.png" id="J1-img"class="card-img-top" alt="...">
+                <div class="card-body">
+                  
+                  <div class="dropdown">
+                    <button class="invisible" type="button" id ="J1"  data-bs-toggle="dropdown" aria-expanded="false">
+                        Elije la seleccion
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" id="J1-uno" href="#">Uno</a></li>
+                      <li><a class="dropdown-item" id="J1-dos"href="#">Dos</a></li>
+                    </ul>
+                  </div>
+                  <h2 class="card-text" id="J1-score">Score = 0</h2>
+                </div>
+              </div>
+              <!--                                      Jugador 2                                         -->
+
+
+
+              <div class="card col-12 col-md-4 mt-5 p-2 bg-danger-subtle" >
+                <h5 class="card-title">Jugador 2</h5>
+                <img src="../img/cero.png" id = "J2-img" class="card-img-top" alt="...">
+                <div class="card-body">
+                  
+                  <div class="dropdown">
+                    <button class="invisible" type="button" id ="J2"data-bs-toggle="dropdown" aria-expanded="false">
+                        Elije la seleccion
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" id="J2-uno"href="#">Uno</a></li>
+                      <li><a class="dropdown-item" id="J2-dos"href="#">Dos</a></li>
+                    </ul>
+                  </div>   
+                  <h2 class="card-text" id="J2-score">Score = 0</h2>             
+                </div>
+              </div>
+              <!--                                      Jugador 3                                      -->
+
+
+
+              <div class="card col-12 col-md-4 mt-5 p-2 bg-success-subtle" >
+                <h5 class="card-title">Jugador 3</h5>
+                <img src="../img/cero.png" id = "J3-img" class="card-img-top" alt="...">
+                <div class="card-body">
+                  
+                  <div class="dropdown">
+                    <button class="invisible" type="button" id ="J3"data-bs-toggle="dropdown" aria-expanded="false">
+                        Elije la seleccion
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" id="J3-uno"href="#">Uno</a></li>
+                      <li><a class="dropdown-item" id="J3-dos"href="#">Dos</a></li>
+                    </ul>
+                  </div>   
+                  <h2 class="card-text" id="J3-score">Score = 0</h2>             
+                </div>
+              </div>
+        </div>
+      </main>
+      <!--                      Footer                              -->
+      <footer class="container-fluid">
+        <div class="row bg-body-secondary">
+        <button class = "btn btn-secondary bg-success mt-4 mb-5 me-auto col-5  p-2 " id="btn-juego">Jugar</button>
+        <button class = "btn btn-secondary bg-danger mt-4  mb-5 ms-auto  col-5 p-2 " id="btn-finalizar">Finalizar</button>
+        </div>
+      </footer>
+</body>
+</html>

@@ -117,55 +117,48 @@ document.getElementById("1jugador").onclick = ()=>play(1);
 document.getElementById("2jugador").onclick = ()=>play(2);
 const ganador = (jugador1, jugador2)=>{
     if(jugador1 == 0 && jugador2 == 1){ //Jugador 1: piedra, Jugador 2: papel
-        alert("Gana el jugador 2");
         jugador2_score++;
         setTimeout(() => {if(parseInt((default_cont/2))+1===jugador1_score || parseInt((default_cont/2))+1===jugador2_score){
-            alert("Fin del juego");
+            alert("Fin del juego. Gana el jugador 2");
             finalizar();
         }}, 1000);
     }
     else if(jugador1 == 0 && jugador2 == 2){ //Jugador1: piedra, Jugador 2: tijera
-        alert("Gana el jugador 1");
         jugador1_score++;
         setTimeout(() => {if(parseInt((default_cont/2))+1===jugador1_score || parseInt((default_cont/2))+1===jugador2_score){
-            alert("Fin del juego");
+            alert("Fin del juego. Gana el jugador 1");
             finalizar();
         }}, 1000);
     }
     else if(jugador1 == 1 && jugador2 == 0){ //Jugador 1: papel, Jugador 2: piedra
-        alert("Gana el jugador 1");
         jugador1_score++;
         setTimeout(() => {if(parseInt((default_cont/2))+1===jugador1_score || parseInt((default_cont/2))+1===jugador2_score){
-            alert("Fin del juego");
+            alert("Fin del juego. Gana el jugador 1");
             finalizar();
         }}, 1000);
     }
     else if(jugador1 == 1 && jugador2 == 2){//Jugador 1: papel, Jugador 2: tijera
-        alert("Gana el jugador 2");
         jugador2_score++;
         setTimeout(() => {if(parseInt((default_cont/2))+1===jugador1_score || parseInt((default_cont/2))+1===jugador2_score){
-            alert("Fin del juego");
+            alert("Fin del juego. Gana el jugador 2");
             finalizar();
         }}, 1000);
     }
     else if(jugador1 == 2 && jugador2 == 0){//Jugador 1: tijera, Jugador 2: piedra
-        alert("Gana el jugador 2");
         jugador2_score++;
         setTimeout(() => {if(parseInt((default_cont/2))+1===jugador1_score || parseInt((default_cont/2))+1===jugador2_score){
-            alert("Fin del juego");
+            alert("Fin del juego. Gana el jugador 2");
             finalizar();
         }}, 1000);
     }
     else if(jugador1 == 2 && jugador2 == 1){//jugador 1: tijera, Jugador 2: papel
-        alert("Gana el jugador 1");
         jugador1_score++;
         setTimeout(() => {if(parseInt((default_cont/2))+1===jugador1_score || parseInt((default_cont/2))+1===jugador2_score){
-            alert("Fin del juego");
+            alert("Fin del juego. Gana el jugador 1");
             finalizar();
         }}, 1000);
     }
     else{
-        alert("Empate");
         setTimeout(() => {if(parseInt((default_cont/2))+1===jugador1_score || parseInt((default_cont/2))+1===jugador2_score){
             alert("Fin del juego");
             finalizar();
@@ -192,7 +185,16 @@ document.getElementById("J2-tijeras").onclick = ()=>{if(jugador2 === -1&& jugado
 }
 //-----------------------------------------------Finalizar juego-----------------------------------------------
 const finalizar = ()=>{
-    alert("Finalizar juego");
+    if(finalizarJuego === false){
+    if(jugador1_score>jugador2_score){
+        alert("Fin del juego. Gana el jugador 1");
+    }
+    else if(jugador1_score<jugador2_score){
+        alert("Fin del juego. Gana el jugador 2");
+    }
+    else{
+        alert("Fin del juego. Empate");
+    }
     document.getElementById("numero-jugadores").className = "dropdown";
     document.getElementById("J1").className = "invisible";
     document.getElementById("J2").className = "invisible";
@@ -203,6 +205,9 @@ const finalizar = ()=>{
     jugador1 = -1;
     jugador2 = -1;
     default_cont = 3;
-    finalizarJuego = true;
+    finalizarJuego = true;}
 }
 document.getElementById("btn-finalizar").onclick = finalizar;
+document.getElementById("mejor-5").onclick = ()=>{default_cont = 5;}
+document.getElementById("mejor-7").onclick = ()=>{default_cont = 7;}
+document.getElementById("mejor-9").onclick = ()=>{default_cont = 9;}
